@@ -1,0 +1,23 @@
+<div class="prog-container" *ngIf="tasks[0] && projectId">
+  <div class="header">
+    <h4 class="ms-4">Tasks Progress</h4>
+  </div>
+  <div class="content">
+    <div *ngFor="let task of tasks">
+      <div class="row my-1">
+      <div class="task-name col">{{ task.name }}</div>
+      <div class="progress-value col">{{ task.progress }} %</div>
+    </div>
+      <div class="progress">
+        <div
+          class="progress-bar"
+          role="progressbar"
+          aria-valuenow="0"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          [style.width]="task.progress + '%'"
+        ></div>
+      </div>
+    </div>
+  </div>
+</div>

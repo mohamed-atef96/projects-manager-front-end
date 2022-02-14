@@ -1,0 +1,48 @@
+.sidebar-container{
+  margin-top: 2px;
+  width: 250px;
+  height: calc(100vh - 60px);
+  background-color: var(--bg-bar);
+}
+
+.projects-list ul {
+  padding: 0px;
+  list-style: none;
+}
+li a{
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  padding: 10px;
+  font-size: 18px;
+}
+li a:hover{
+  background-color: #0005;
+  color: #fff !important;
+}
+.active{
+  color: #444 !important;
+  background-color: #fff;
+}
+.add-project{
+  border: none;
+    outline: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.add-project:hover i{
+  color: #77C044;
+}
+.add-btn{
+  background-color:#77C044 !important;
+  color: #fff;
+}
+
+.alert{
+  position: absolute;
+  right: 20px;
+  top: 80px;
+}

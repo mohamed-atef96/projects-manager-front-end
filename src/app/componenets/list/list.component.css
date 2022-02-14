@@ -1,0 +1,6 @@
+.list-container{
+  height: 100vh;
+  width: calc(100vw - 250px);
+  height: calc(100vh - 60px);
+  padding: 20px;
+}

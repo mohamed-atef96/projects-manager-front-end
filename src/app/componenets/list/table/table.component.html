@@ -1,0 +1,69 @@
+<div class="alert alert-danger d-flex align-items-center" [class.fade]="! taskError" role="alert">
+  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+  <div>
+   Error : Cannot Create Task Right Now
+  </div>
+</div>
+
+<div class="table-container bg-white" *ngIf="projectId">
+  <div class="header row">
+    <div class="col-title col-2">Done</div>
+    <div class="col-title col-5">Task Name</div>
+    <div class="col-title col-2">Progress</div>
+    <div class="col-title col-3">Date</div>
+  </div>
+  <div class="content" *ngFor="let task of tasks">
+    <div class="wrapper row" *ngIf="task._id" routerLinkActive="active" [routerLink]="[]" [queryParams]="{project:projectId,task:task._id}">
+    <div class="col-title col-2">
+      <input type="checkbox" name="" id="" [checked]="task.done"/>
+    </div>
+    <div class="col-title col-5">{{ task.name }}</div>
+    <div class="col-title col-2">{{ task.progress }} %</div>
+    <div class="col-title col-3">{{ task.createdAt | date: "dd/MM/YY" }}</div>
+  </div>
+</div>
+  <button
+    class="add-Task ps-4 mt-2"
+    data-bs-toggle="modal"
+    data-bs-target="#newTask"
+  >
+    <i class="fa-solid fa-circle-plus fs-4"></i>
+    <span class="ms-2">New Task</span>
+  </button>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="newTask"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Add New Task</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <input type="text" class="form-control" [(ngModel)]="taskName" />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn add-btn" data-bs-dismiss="modal" (click)="addTask(projectId , taskName)" >
+          Add
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+.prog-container {
+  background: #fff;
+  width: 550px;
+  margin: 20px 15px;
+  border-radius: 10px;
+  padding: 5px;
+}
+.content {
+  height: 236px;
+  padding: 10px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+span {
+  color: #666;
+}
+
+.progress {
+  height: 7px;
+}
+.progress-bar {
+  background: -webkit-linear-gradient(left, #33156d 0%, #f282bc 100%);
+}
+
+.header {
+  background-color: #f4f4f4 !important;
+  padding: 7px;
+  color: #444;
+  text-transform: capitalize;
+}
+
+.task-name{
+  font-size: 14px;
+  font-weight: 700;
+  color: #444;
+}

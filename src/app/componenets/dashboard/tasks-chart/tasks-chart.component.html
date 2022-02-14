@@ -1,0 +1,12 @@
+<div class="chart-container "  *ngIf="tasks[0] && projectId">
+<ngx-charts-pie-chart
+[ngClass]="'pi-chart'"
+  [results]="single"
+  [gradient]="gradient"
+  [legend]="showLegend"
+  [labels]="showLabels"
+  [doughnut]="isDoughnut"
+
+  >
+</ngx-charts-pie-chart>
+</div>

@@ -1,0 +1,80 @@
+<div
+  class="alert alert-danger d-flex align-items-center"
+  [class.fade]="!projectError"
+  role="alert"
+>
+  <svg
+    class="bi flex-shrink-0 me-2"
+    width="24"
+    height="24"
+    role="img"
+    aria-label="Danger:"
+  >
+    <use xlink:href="#exclamation-triangle-fill" />
+  </svg>
+  <div>Error : Cannot Create Project Right Now</div>
+</div>
+
+<aside class="sidebar-container">
+  <div class="projects-list">
+    <ul *ngFor="let project of projects">
+      <li>
+        <a
+          [routerLink]="[]"
+          [queryParams]="{ project: project._id }"
+          routerLinkActive="active"
+          >{{ project.name }}</a
+        >
+      </li>
+    </ul>
+    <button
+      class="add-project ps-4 mt-2"
+      data-bs-toggle="modal"
+      data-bs-target="#staticBackdrop"
+    >
+      <i class="fa-solid fa-circle-plus fs-4"></i>
+      <span class="ms-2">New Project</span>
+    </button>
+  </div>
+</aside>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="staticBackdrop"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Add New Project</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <input type="text" class="form-control" [(ngModel)]="projectName" />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button
+          type="button"
+          class="btn add-btn"
+          data-bs-dismiss="modal"
+          (click)="addProject(projectName)"
+        >
+          Add
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

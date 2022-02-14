@@ -1,0 +1,30 @@
+<div class="progress-container bg-white" *ngIf="task.name">
+  <div class="header">
+    <h4 class="ms-4">{{task.name}}</h4>
+  </div>
+  <div>
+    <h5 class="ms-4 mt-3">Change Progress</h5>
+    <div class="stepper-wrapper">
+    <div class="stepper-item" [class.completed]="task.progress >= 0"  (click)="changeProgress(0)">
+      <div class="step-counter">0</div>
+      <div class="step-name">Not Started</div>
+    </div>
+    <div class="stepper-item" [class.completed]="task.progress >= 25" (click)="changeProgress(25)">
+      <div class="step-counter">25</div>
+      <div class="step-name">Started</div>
+    </div>
+    <div class="stepper-item" [class.completed]="task.progress >= 50" (click)="changeProgress(50)">
+      <div class="step-counter">50</div>
+      <div class="step-name">Halfway Done</div>
+    </div>
+    <div class="stepper-item" [class.completed]="task.progress >= 75" (click)="changeProgress(75)">
+      <div class="step-counter">75</div>
+      <div class="step-name">Mostly Done</div>
+    </div>
+    <div class="stepper-item" [class.completed]="task.progress == 100" (click)="changeProgress(100)">
+      <div class="step-counter">100</div>
+      <div class="step-name">Done</div>
+    </div>
+  </div>
+</div>
+</div>
